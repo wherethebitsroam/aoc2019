@@ -8,3 +8,6 @@ edition = "2018"
 
 [dependencies]
 permutohedron = "0.2.4"
+itertools = "0.8.2"
+rand = "*"
+modinverse = "*"

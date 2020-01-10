@@ -21,11 +21,22 @@ pub fn part1() {
     println!("result: {}", v[0]);
 }
 
+fn calculate(s: &str) -> String {
+    let mut v = string_to_vec(s);
+    computer(&mut v);
+    vec_to_string(&v)
+}
+
 fn string_to_vec(s: &str) -> Vec<i32> {
     s.trim()
         .split(',')
         .map(|x| x.parse().expect("failed to parse to int"))
         .collect()
+}
+
+fn vec_to_string(v: &[i32]) -> String {
+    let s: Vec<String> = v.iter().map(|x| x.to_string()).collect();
+    s.join(",")
 }
 
 fn computer(v: &mut Vec<i32>) {
